@@ -1,4 +1,4 @@
-public class Main {
+public class MainListaSimples {
     public static void main(String[] args) {
         ListaSimples listaSimples = new ListaSimples(3);
         listaSimples.inserirElemento(1);
