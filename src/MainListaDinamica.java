@@ -1,8 +1,9 @@
 public class MainListaDinamica {
     public static void main(String[] args) {
-        ListaDinamica listaDinamica = new ListaDinamica("Pedro");
-        No no = listaDinamica.getPrimeiroElemento();
-        System.out.println(no.getConteudo());
-        
+        ListaDinamica salaENSW = new ListaDinamica("Pedro");
+        salaENSW.insereElemento("Gustavo");
+        salaENSW.insereElemento("Marcos");
+        salaENSW.insereElemento("Victor");
+        salaENSW.percorrerElementos();
     }
 }

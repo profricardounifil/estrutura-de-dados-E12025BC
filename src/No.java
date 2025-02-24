@@ -22,5 +22,4 @@ public class No {
     public void setProx(No prox) {
         this.prox = prox;
     }
-
 }
