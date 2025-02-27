@@ -3,7 +3,8 @@ public class MainListaDinamica {
         ListaDinamica salaENSW = new ListaDinamica("Pedro");
         salaENSW.insereElemento("Gustavo");
         salaENSW.insereElemento("Marcos");
-        salaENSW.insereElemento("Victor");
+        //salaENSW.insereElemento("Victor");
+        salaENSW.removerElemento("Gustavo");
         salaENSW.percorrerElementos();
     }
 }
