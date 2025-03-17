@@ -72,4 +72,45 @@ public class ListaDinamica {
         return false;
     }
 
+    public void contarElementos() {
+        int cont = 0;
+        if(estaVazia()) {
+            System.out.println("Existem " + cont + " elementos na lista.");
+        } else {
+            No aux = this.primeiroElemento;
+            while(aux != null) {
+                cont = cont + 1;
+                aux = aux.getProx();
+            }
+            System.out.println("Existem " + cont + " elementos na lista.");
+        }
+    }
+
+    public void ordenarCrescente() {
+        if(estaVazia()) {
+            System.out.println("Não existem elementos para serem ordenados.");
+        } else {
+            No atual = this.primeiroElemento;
+            while (atual != null){
+                No atual2 = this.primeiroElemento;
+                while(atual2 != null) {
+                    No proximo = atual2.getProx();
+                    String aux;
+                    if(atual2.getProx() != null && Integer.parseInt(atual2.getConteudo()) > Integer.parseInt(proximo.getConteudo())) {
+                        aux = atual2.getConteudo();
+                        atual2.setConteudo(proximo.getConteudo());
+                        proximo.setConteudo(aux);
+                    }
+                    atual2 = atual2.getProx();
+                }
+                atual = atual.getProx();
+            }
+        }
+    }
+
+    public void inserirOrdenado(String conteudo) {
+        ordenarCrescente();
+        insereElemento(conteudo);
+    }
+
 }

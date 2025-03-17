@@ -17,9 +17,13 @@ public class ListaSimples {
         }
     }
 
-//    public boolean estaVazia() {
-//
-//    }
+    public boolean estaVazia() {
+        if(this.lista[0] == null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     public boolean posicaoEstaVazia(int posicao) {
         if (this.lista[posicao] == null) {
@@ -72,5 +76,45 @@ public class ListaSimples {
                 this.lista[indice] = elemento;
             }
         }
+    }
+
+    public void contarElementos() {
+        int cont = 0;
+        if(estaVazia()) {
+            System.out.println("Existem " + cont + " elementos na lista.");
+        } else {
+            for (int i = 0; i < tamanho; i++) {
+                if (this.lista[i] != null) {
+                    cont = cont + 1;
+                } else {
+                    break;
+                }
+            }
+            System.out.println("Existem " + cont + " elementos na lista.");
+        }
+    }
+
+    public void ordenarCrescente() {
+        if(estaVazia()) {
+            System.out.println("Não existem elementos para serem ordenados.");
+        } else {
+            Integer aux;
+            for (int h = 0; h < this.tamanho; h++) {// 3
+                for (int i = 0; i < (this.tamanho - 1); i++) {// 2
+                    if(this.lista[i+1] != null &&this.lista[i] > this.lista[i+1]) {
+                        aux = this.lista[i];
+                        this.lista[i] = this.lista[i+1];
+                        this.lista[i+1] = aux;
+                    }
+                }
+            }
+
+        }
+    }
+
+    public void insereOrdenado(int elemento) {
+        ordenarCrescente();
+        inserirElemento(elemento);
+
     }
 }
