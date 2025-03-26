@@ -1,4 +1,4 @@
-public class No {
+public class Nos {
     private String conteudo;
     private No prox;
 
